@@ -1,0 +1,1 @@
+C:\Users\ignas\virtualenvs\virtualIreland\Scripts\activate
