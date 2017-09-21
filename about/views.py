@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Abou
 from rest_framework import viewsets
-from .serializers import AboutSerializer
+from .serializers import AbouSerializer
 from django.template.context_processors import csrf
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
 def all_about(request):
-    about = Product.objects.all()
+    about = Abou.objects.all()
     paginator = Paginator(about, 5)
     page = request.GET.get('page')
     try:
@@ -28,6 +28,6 @@ class ProductViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+    queryset = Abou.objects.all()
+    serializer_class = AbouSerializer
 

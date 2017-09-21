@@ -1,8 +1,9 @@
-from .models import Product
 from rest_framework import serializers
+from .models import Abou
 
 
-class ProductSerializer(serializers.HyperlinkedModelSerializer):
+
+class AbouSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Product
+        model = Abou
         fields = ('name', 'description', 'price', 'image')
