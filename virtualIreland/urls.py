@@ -24,6 +24,7 @@ from django.views import static
 
 from rest_framework import routers
 from about import views as abou_views
+from search import urls as search_urls
 
 # router = routers.DefaultRouter()
 # router.register(r'about', abou_views.AbouViewSet)
@@ -35,5 +36,6 @@ urlpatterns = [
     url(r'accounts/', include(accounts_urls)),
     url(r'^about/', include(about_urls)),
     url(r'user/', include(reset_urls)),
+    url(r'^search/', include(search_urls)),
 
 ]
