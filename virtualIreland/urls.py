@@ -25,6 +25,7 @@ from django.views import static
 from rest_framework import routers
 from about import views as abou_views
 from search import urls as search_urls
+# from search.views import do_search
 
 # router = routers.DefaultRouter()
 # router.register(r'about', abou_views.AbouViewSet)

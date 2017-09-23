@@ -24,7 +24,7 @@ def all_about(request):
 
 
 
-class ProductViewSet(viewsets.ModelViewSet):
+class AbouViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
