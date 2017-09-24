@@ -5,24 +5,22 @@
 
 
 {% for abou in about %}
-        <!-- Modal -->
-<div id="{{abou.id}}" class="modal fade" role="dialog">
-  <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content1">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h1 class="modal-title">{{abou.name}}</h1>
+<div id="{{ abou.id }}">
+  <div class="dialog">
+
+        <button type="button" class="close" data-dismiss="">&times;</button>
+        <h1 class="-t">{{ abou.title }}</h1>
       </div>
-      <div class="modal-body">
+      <div class="-b">
 <div class="row">
   <div class="col-sm-6 col-md-6 col-lg-6">
-    <img class="productInfo" src="{{ MEDIA_URL }}{{ abou.image }}">
+    <img class="pro" src="{{ MEDIA_URL }}{{ abou.thumbnail_image }}">
   </div>
     <div class="col-sm-6 col-md-6 col-lg-6">
-      <h6>{{ abou.description }}</h6>
-      <h2>€{{ abou.price }} each</h2>
+      <h6>{{ abou.content }}</h6>
+      <h2>€{{ abou.tag }} each</h2>
+      <h2>€{{ abou.vr_image }} vr image here</h2>
     </div>
 </div>
       </div>
