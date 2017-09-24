@@ -8,31 +8,26 @@
 
 <div id="{{ abou.id }}">
   <div class="dialog">
-
-        <button type="button" class="close" data-dismiss="">&times;</button>
+<div class="col-sm-6 col-md-6 col-lg-6">
         <h1 class="-t">{{ abou.title }}</h1>
       </div>
       <div class="-b">
 <div class="row">
   <div class="col-sm-6 col-md-6 col-lg-6">
-    <img class="pro" src="{{ MEDIA_URL }}{{ abou.thumbnail_image }}">
+    
+                           
+                            <img src="{{ MEDIA_URL }}{{ abou.vr_image }}">
+    
   </div>
     <div class="col-sm-6 col-md-6 col-lg-6">
-      <h6>{{ abou.content }}</h6>
-      <h2>€{{ abou.tag }} each</h2>
-      <h2>€{{ abou.vr_image }} vr image here</h2>
+      <h6>{{ abou.content|truncatewords:10 }}</h6>
+      <h2>{{ abou.tag }}</h2>
+      <img height="100" width="100" src="{{ MEDIA_URL }}{{ abou.thumbnail_image }}">
+
     </div>
 </div>
+<button class="btn btn-default" type="submit">Add to cart</button>
       </div>
-      {% comment %}<div class="modal-footer">
-        <div class="inlineButtons">
-        <form method="post" action="{% url 'add_plus' abou.id %}">
-          <button class="btn btn-default" type="submit">Add to cart</button>
-          {% csrf_token %}
-        </form>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-      </div>{% endcomment %}
     </div>
 
   </div>
