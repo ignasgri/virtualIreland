@@ -12,7 +12,9 @@
 
             <div class="col-sm-4" id="blogpostimagediv">
                 <a class="story-img" href="{{ post.id }}" >
+                    {% if post.image %}
                         <img id="blogpostimage" src="{{MEDIA_URL}}{{ post.image}}" width="150px">
+                    {% endif %}
                 </a>
             </div>
             <div class="col-sm-8" id="blogpostinfodiv">

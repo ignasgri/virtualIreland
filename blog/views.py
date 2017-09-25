@@ -5,13 +5,7 @@ from .forms import BlogPostForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
- 
 
-def im_home (request):
-    return render(request, 'home.html')
-
-def contact_us(request):
-    return render(request, 'contact.html')
 
 def post_list(request):
 
