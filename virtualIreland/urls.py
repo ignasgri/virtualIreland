@@ -18,6 +18,7 @@ from django.contrib import admin
 from main.views import get_index
 from about import urls as about_urls
 from accounts import urls as accounts_urls
+from blog import urls as blog_urls
 from accounts import reset_urls as reset_urls
 from .settings import MEDIA_ROOT
 from django.views import static
@@ -37,6 +38,7 @@ urlpatterns = [
     url(r'accounts/', include(accounts_urls)),
     url(r'^about/', include(about_urls)),
     url(r'user/', include(reset_urls)),
+    url(r'^blog/', include(blog_urls)),
     url(r'^search/', include(search_urls)),
     url(r'^$', get_index, name='index'),
     url(r'^media/(?P<path>.*)$', static.serve,{'document_root': MEDIA_ROOT}),
