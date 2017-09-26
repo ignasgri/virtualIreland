@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Abou
 from rest_framework import viewsets
 from .serializers import AbouSerializer
@@ -12,7 +12,11 @@ def all_about(request):
     args.update(csrf(request))
     return render(request, "about.html", {"about": about}, args)
 
-
+def abou_detail(request, id):
+    abou = get_object_or_404(Abou, pk=id)
+    abou.views += 1
+    abou.save()
+    return render(request, "aboutdetail.html", {'abou': abou})
 
 
 class AbouViewSet(viewsets.ModelViewSet):
