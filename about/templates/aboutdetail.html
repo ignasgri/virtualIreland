@@ -7,11 +7,16 @@
         <button class="btn btn-success" onclick="location.href='/about'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button>
 <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 align_centre">
+            <div class="col-sm-12 ">
                 <h1>{{ abou.title }}</h1>
-                {% if abou.image %}
-                    <img src="{{MEDIA_URL}}{{ abou.vr_thumbnail_image}}">
-                {% endif %}
+                
+                    
+                <a-scene>
+      <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 228 0"></a-sky>
+
+      <a-text font="kelsonsans" value="Guinness Lake" width="6" position="0 0.3 -2"
+              rotation="-3 -50 0"></a-text>
+    </a-scene>
                 <div class="t">
                 <p>{{ abou.content|linebreaks }}</p>
                 <p>{{ abou.published_date }} | <strong>Views</strong> {{ abou.views }} | <strong>Tag</strong> {{ abou.tag }}</p>
