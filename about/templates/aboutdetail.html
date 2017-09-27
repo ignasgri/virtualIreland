@@ -4,6 +4,8 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
 </head>
+
+
         <button class="btn btn-success" onclick="location.href='/about'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button>
 <div class="container-fluid">
         <div class="row">
@@ -12,10 +14,10 @@
                 
                     
                 <a-scene>
-      <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 228 0"></a-sky>
+      <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>
 
-      <a-text font="kelsonsans" value="Guinness Lake" width="6" position="0 0.3 -2"
-              rotation="-3 -50 0"></a-text>
+      {% comment %}<a-text font="kelsonsans" value="Guinness Lake" width="6" position="0 0.3 -2"
+              rotation="-3 -50 0"></a-text>{% endcomment %}
     </a-scene>
                 <div class="t">
                 <p>{{ abou.content|linebreaks }}</p>

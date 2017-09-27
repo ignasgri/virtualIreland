@@ -1,3 +1,7 @@
 .rounded-circle {
     margin-bottom: 20px;
 }
+.align{
+    display: inline-block;
+    position: relative;
+}
