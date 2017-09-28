@@ -14,16 +14,15 @@
                         {% endblock sidebar %}
                     </div>{% endcomment %}
 
-{% comment %}<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 size">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 size">
         {% for abou in about %}
                 <div class="imageprices">
-                <img style="cursor:pointer;" height="200" width="200" data-toggle="modal" data-target="#{{abou.id}}" src="{{ MEDIA_URL }}{{ abou.image }}">
-                <h6>{{ abou.name }}</h6>
-                <h6>€{{ abou.price }}</h6>
+                <img style="cursor:pointer;" height="200" width="200" data-toggle="modal" data-target="#{{abou.id}}" src="{{ MEDIA_URL }}{{ abou.thumbnail_image }}">
+                <p> {{ abou.content }}</p>
                 </div>
         {% endfor %}
-    </div>{% endcomment %}
-<h1>about works</h1>
+    </div>
+
 
 
 {% endblock content %}
