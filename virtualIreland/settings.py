@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
+    'django.contrib.sites',
     'storages',
     'rest_framework',
     'bootstrap3',
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'accounts',
     'search',
     'blog',
+    'disqus',
     
 
 ]
@@ -143,6 +145,9 @@ STATICFILES_DIRS = (
 )
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+DISQUS_API_KEY=os.environ.get("DISQUS_API_KEY")
+DISQUS_WEBSITE_SHORTNAME = 'virtualireland'
 
 # AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
 #     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
