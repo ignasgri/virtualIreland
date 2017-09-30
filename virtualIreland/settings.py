@@ -149,6 +149,8 @@ MEDIA_URL = '/media/'
 DISQUS_API_KEY=os.environ.get("DISQUS_API_KEY")
 DISQUS_WEBSITE_SHORTNAME = 'virtualireland'
 
+GOOGLE_GEOLOCATION_API=os.environ.get("GOOGLE_GEOLOCATION_API")
+
 # AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
 #     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
 #     'Cache-Control': 'max-age=94608000',

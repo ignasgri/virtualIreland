@@ -3,6 +3,12 @@
 {% block content %}
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
+        <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
 </head>
 
 
@@ -14,7 +20,7 @@
                 
                     
                 <a-scene>
-      <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>
+      {% comment %}<a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>{% endcomment %}
 
       {% comment %}<a-text font="kelsonsans" value="Guinness Lake" width="6" position="0 0.3 -2"
               rotation="-3 -50 0"></a-text>{% endcomment %}
@@ -30,6 +36,29 @@
             </div>
         </div>
 </div>
+
+
+
+
+
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_GEOLOCATION_API&callback=initMap">
+    </script>
 {% comment %}{% load disqus_tags %}
 {% set_disqus_title post.title %}
 {% disqus_show_comments %}{% endcomment %}
