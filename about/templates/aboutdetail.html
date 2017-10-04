@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+{% load static from staticfiles %}
  
 {% block content %}
+
 <head>
+    <script src="{% static 'js/weather.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
         <style>
        #map {
@@ -10,6 +13,37 @@
        }
     </style>
 </head>
+
+<div class="weather-app">
+    <div class="left">
+<div class="temperature"><span id="temperature">0</span>&deg;</div>
+<div class="location"><span id="location">Unknown</span></div>
+    </div>
+    <div class="right">
+<div class="top">
+    <img id="icon" width="75px" src="{% static "images/sunny.jpg" %}"/>
+</div>
+
+<div class="bottom">
+
+<div class="humidity">
+    <img src="{% static 'images/humidity.jpg' %}" height="16px" />
+    <span id="humidity">0</span>%
+</div>
+<div class="wind">
+    <span id="wind">0</span>mph <span id="direction">N</span>
+</div>
+
+</div>
+    </div>
+</div>
+
+
+
+
+
+
+
 
 
         <button class="btn btn-success" onclick="location.href='/about'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button>
@@ -65,5 +99,8 @@
 {% comment %}{% load disqus_tags %}
 {% set_disqus_title post.title %}
 {% disqus_show_comments %}{% endcomment %}
+
+
+
 
 {% endblock %}
