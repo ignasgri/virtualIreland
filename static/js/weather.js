@@ -6,8 +6,31 @@ var humidity;
 var wind;
 var direction;
 
+
 function updateByCity(city){
-    
+    var url = "http://api.openweathermap.org/data/2.5/weather?" +
+        "q=" + city + ',IE' +
+        "&APPID=" + APPID + "&units=metric";
+    sendRequest(url);
+}
+
+function sendRequest(url){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState == 4 && xmlhttp.status ==200){
+            var data = JSON.parse(xmlhttp.responseText);
+            var weather = {};
+            weather.icon = data.weather[0].id;
+            weather.humidity = data.main.humidity;
+            weather.wind = data.wind.speed;
+            weather.direction = data.wind.deg;
+            weather.loc = data.name;
+            weather.temp = data.main.temp;
+            update(weather);
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
 }
 
 function update(weather){
@@ -16,7 +39,8 @@ function update(weather){
     humidity.innerHTML = weather.humidity;
     loc.innerHTML = weather.loc;
     temp.innerHTML = weather.temp;
-    icon.src = "static/images" + weather.icon + ".png";
+    icon.src = "static/images/" + weather.icon + ".png";
+
 }
 
 window.onload = function(){
@@ -27,13 +51,5 @@ window.onload = function(){
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
 
-    var weather = {};
-    weather.wind = 3.5;
-    weather.direction = "N";
-    weather.humidity = 35;
-    weather.loc = "kenmare";
-    weather.temp = "20";
-    weather.icon = "sunny";
-
-    update(weather);
+    updateByCity("Kenmare");
 }
