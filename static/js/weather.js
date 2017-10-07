@@ -50,6 +50,7 @@ window.onload = function(){
     humidity = document.getElementById("humidity");
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
+    name = document.getElementById("locName");
 
     updateByCity("Kenmare");
 }
