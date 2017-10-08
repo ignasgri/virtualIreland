@@ -4,7 +4,6 @@
 {% block content %}
 
 <head>
-    <script src="{% static 'js/weather' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
         <style>
        #map {
@@ -86,6 +85,7 @@
     var lat;
     var lng;
     
+    
 function updateByGeo(geo){
     var url = "http://api.openweathermap.org/data/2.5/weather?" +
         "lat=" + lat + '&lon=' + lng +
@@ -121,8 +121,7 @@ function update(weather){
     humidity.innerHTML = weather.humidity;
     loc.innerHTML = weather.loc;
     temp.innerHTML = weather.temp;
-    icon.src = "static/images/" + weather.icon + ".png";
-
+    icon.src = "/static/images/" + weather.icon + ".png";
 }
 
 window.onload = function(){
@@ -160,7 +159,7 @@ window.onload = function(){
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key={GOOGLE_GEOLOCATION_API}&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvLC8xzZIRenRJVRdqO8zAvlrGY9LW9Zk&callback=initMap">
     </script>
 {% comment %}{% load disqus_tags %}
 {% set_disqus_title post.title %}
