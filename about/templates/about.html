@@ -1,8 +1,7 @@
-{% extends "base.html" %}
 {% load static from staticfiles %}
 {% block content %}
 
-
+{% block sidebar%}
 {% for abou in about %}
 
 
@@ -88,7 +87,7 @@
   </div>
 </div>{% endcomment %}
 {% endfor %}
-
+{% endblock sidebar%}
 
 
 
