@@ -73,8 +73,91 @@
 
 
 
+{% for abou in about %}
 
 
+<div id="{{ abou.id }}">
+<div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-sm-6 col-sm-6 col-md-6 col-lg-6 ">
+          <img class="rounded-circle" src="{{MEDIA_URL}}{{ abou.thumbnail_image}}" alt="Generic placeholder image" width="140" height="140">
+          <h2>{{abou.title}}</h2>
+          <p>{{ abou.content|truncatewords:10 }}</p>
+              <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><TABLE>
+                                      <TR id="row1">
+                                        <TD>Distance
+                                      <TR id="row2">
+                                        <TD><i class="fal fa-map-marker" aria-hidden="true"></i>  100km (80mi)
+                                      </TABLE>
+            </div>
+            <div class="swiper-slide"><TABLE>
+                                      <TR id="row1">
+                                        <TD>Mon  <TD>Tue  <TD>Wed
+                                      <TR id="row2">
+                                        <TD><i class="fal fa-cloud" aria-hidden="true"></i>+19   <TD><i class="fal fa-sun" aria-hidden="true"></i>+18   <TD><i class="fal fa-tint" aria-hidden="true"></i>+13 
+                                      </TABLE>
+            </div>
+            <div class="swiper-slide"><TABLE>
+                                      <TR id="row1">
+                                        <TD>Rank
+                                      <TR id="row2">
+                                        <TD><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fal fa-star" aria-hidden="true"></i><i class="fal fa-star" aria-hidden="true"></i> 
+                                      </TABLE>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+          <p><a class="btn btn-secondary" onclick="location.href={{ abou.id }}" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    </div>
+</div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}<div id="{{ abou.id }}">
+  <div class="dialog">
+<div class="col-sm-6 col-md-6 col-lg-6">
+        <h1 class="-t">{{ abou.title }}</h1>
+      </div>
+      <div class="-b">
+<div class="row">
+  <div class="col-sm-6 col-md-6 col-lg-6">
+    
+                           
+                            <img src="{{ MEDIA_URL }}{{ abou.vr_image }}">
+    
+  </div>
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <h6>{{ abou.content|truncatewords:10 }}</h6>
+      <h2>{{ abou.tag }}</h2>
+      <img height="100" width="100" src="{{ MEDIA_URL }}{{ abou.thumbnail_image }}">
+
+    </div>
+</div>
+<p><button class="btn btn-success hvr-grow" onclick="location.href={{ abou.id }}">Read More</button></p>
+      </div>
+    </div>
+
+  </div>
+</div>{% endcomment %}
+{% endfor %}
 
 
 

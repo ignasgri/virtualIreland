@@ -8,4 +8,5 @@ from . import views
 urlpatterns = [
     url(r'^$', all_about, name='about'),
     url(r'^(?P<id>\d+)/$', abou_detail),
+    url(r'index^(?P<id>\d+)/$',all_about, name='index' ),
 ]
