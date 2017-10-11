@@ -40,7 +40,10 @@ urlpatterns = [
     url(r'user/', include(reset_urls)),
     url(r'^blog/', include(blog_urls)),
     url(r'^$', get_index, name='index'),
+     # url(r'^index/', get_index, name='index'),
+    # url(r'^index/about/', include(about_urls)),
     url(r'^media/(?P<path>.*)$', static.serve,{'document_root': MEDIA_ROOT}),
     url(r'^search/', include(search_urls)),
+
 
 ]
