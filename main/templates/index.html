@@ -2,8 +2,9 @@
 {% load static from staticfiles%}
 {% load bootstrap_tags %}
 
-
+<link rel="stylesheet" href="{% static 'css/index_grid.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+<link rel="stylesheet" href="{% static 'css/swiper.css' %}">
 {%block content%}
 
 <div class="container">
@@ -77,13 +78,11 @@
 
 
 <div id="{{ abou.id }}">
-<div class="container marketing">
-
+<div class="container">
+<div class="sidebar">
       <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-sm-6 col-sm-6 col-md-6 col-lg-6 ">
-          <img class="rounded-circle" src="{{MEDIA_URL}}{{ abou.thumbnail_image}}" alt="Generic placeholder image" width="140" height="140">
-          <h2>{{abou.title}}</h2>
+      <h2>{{abou.title}}</h2>
+          <img src="{{MEDIA_URL}}{{ abou.thumbnail_image}}" alt="Generic placeholder image" width="300" height="200">
           <p>{{ abou.content|truncatewords:10 }}</p>
               <!-- Swiper -->
     <div class="swiper-container">
