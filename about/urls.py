@@ -7,6 +7,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', all_about, name='about'),
-    url(r'^(?P<id>\d+)/$', abou_detail),
-    # url(r'index/about^(?P<id>\d+)/$', abou_detail),
+    url(r'^(?P<id>\d+)/$', abou_detail, name='abou'),
+    # url(r'^(?P<id>\d+)/$', abou_detail),
+    
 ]

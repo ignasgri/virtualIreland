@@ -6,7 +6,7 @@
     grid-template-areas: 
     "title title title title title"
     "header header header header header"
-    "sidebar"
+    "sidebar sidebar sidebar sidebar sidebar"
     "content content content content content"
     "footer footer footer footer footer";
     grid-gap: 10px;
@@ -24,6 +24,12 @@
     width: 300px;
     height: 400px;
     position: relative;
+    /*display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "a a a a";
+    grid-gap: 10px;*/
 }
 .sidebar p{
     
@@ -47,6 +53,7 @@
 .grid div:nth-child(odd){
     background-color: green;
 }
+
 @media screen and (min-width: 736px){
     .grid{
     display: grid;

@@ -34,7 +34,6 @@ router.register(r'about', abou_views.AbouViewSet)
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
-    
     url(r'accounts/', include(accounts_urls)),
     url(r'^about/', include(about_urls)),
     url(r'user/', include(reset_urls)),
@@ -44,6 +43,7 @@ urlpatterns = [
     # url(r'^index/about/', include(about_urls)),
     url(r'^media/(?P<path>.*)$', static.serve,{'document_root': MEDIA_ROOT}),
     url(r'^search/', include(search_urls)),
+    
 
 
 ]

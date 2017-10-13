@@ -8,8 +8,10 @@
 {%block content%}
 
 <div class="container">
-<div class="title">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem fugit, obcaecati odio asperiores iure officia illo! Consectetur dolorum aspernatur non reiciendis, ipsam quisquam, hic culpa dignissimos. Sunt, libero veniam voluptate. </p>
+<div class="title irelands_container">
+  <img id="irelands_map" src="{% static 'images/ireland.png'%}" alt="irelands map">
+  <h1>Find you destination</h1>
+  <p>Click on map to discover new experience in 360 </p>
 </div>
 </div>
   
@@ -17,64 +19,9 @@
 <div class="header">
 <div class="swiper-container">
 <div class="swiper-wrapper">
+  {% for abou in about %}
 <div class="swiper-slide">
-  <img src="{% static "images/kenmare.jpg" %}" width="400px">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum temporibus maxime eum voluptatem consequatur, libero consectetur tempore odit odio reprehenderit impedit doloribus corrupti ratione? Possimus provident beatae a voluptate autem. </p>
-</div>
-<div class="swiper-slide">
-  <img src="{% static "images/kenmare.jpg" %}" width="400px">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum temporibus maxime eum voluptatem consequatur, libero consectetur tempore odit odio reprehenderit impedit doloribus corrupti ratione? Possimus provident beatae a voluptate autem. </p>
 
-</div>
-<div class="swiper-slide">
-  <img src="{% static "images/kenmare.jpg" %}" width="400px">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum temporibus maxime eum voluptatem consequatur, libero consectetur tempore odit odio reprehenderit impedit doloribus corrupti ratione? Possimus provident beatae a voluptate autem. </p>
-</div>
-<div class="swiper-slide">Slide 5</div>
-<div class="swiper-slide">Slide 6</div>
-<div class="swiper-slide">Slide 7</div>
-<div class="swiper-slide">Slide 8</div>
-<div class="swiper-slide">Slide 9</div>
-<div class="swiper-slide">Slide 10</div>
-</div>
-
-<div class="swiper-pagination"></div>
-</div>
-
-</div>
-</div>
-
-<div class="container">
-<div class="content">
-
-
-    
-{% block sidebar %}
-{% endblock sidebar%}
-
-</div>
-</div>
-  
-
-{% comment %}<div class="grid">
-  <div class="title">Title</div>
-  <div class="header">Header</div>
-  <div class="sidebar">Sidebar</div>
-  <div class="content">Content</div>
-  <div class="footer">Footer</div>
-</div>{% endcomment %}
-
-
-
-
-
-
-
-
-
-
-
-{% for abou in about %}
 
 
 <div id="{{ abou.id }}">
@@ -112,51 +59,40 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
     </div>
-          <p><a class="btn btn-secondary" onclick="location.href={{ abou.id }}" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-secondary" onclick="location.href='{% url 'abou' abou.id %}'" role="button">View details &raquo;</a></p>
         </div>
       </div>
     </div>
 </div>
-        
 
-
-
-
-
-
-
-
-
-
-
-
-{% comment %}<div id="{{ abou.id }}">
-  <div class="dialog">
-<div class="col-sm-6 col-md-6 col-lg-6">
-        <h1 class="-t">{{ abou.title }}</h1>
-      </div>
-      <div class="-b">
-<div class="row">
-  <div class="col-sm-6 col-md-6 col-lg-6">
-    
-                           
-                            <img src="{{ MEDIA_URL }}{{ abou.vr_image }}">
-    
-  </div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <h6>{{ abou.content|truncatewords:10 }}</h6>
-      <h2>{{ abou.tag }}</h2>
-      <img height="100" width="100" src="{{ MEDIA_URL }}{{ abou.thumbnail_image }}">
-
-    </div>
-</div>
-<p><button class="btn btn-success hvr-grow" onclick="location.href={{ abou.id }}">Read More</button></p>
-      </div>
-    </div>
-
-  </div>
-</div>{% endcomment %}
 {% endfor %}
+</div>
+</div>
+
+<div class="swiper-pagination"></div>
+</div>
+
+</div>
+
+
+
+    
+{% block sidebar %}
+{% endblock sidebar%}
+
+</div>
+</div>
+  
+
+
+
+
+
+
+
+
+
+
 
 
 

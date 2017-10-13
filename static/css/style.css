@@ -2,7 +2,7 @@
     margin: 0px 120px 0px 120px;
 }*/
 body{
-    background-color: #d4f0fc!important;
+    background-color: white!important;
 }
 
 
@@ -21,4 +21,25 @@ body{
 .align{
     display: inline-block;
     position: relative;
+}
+.irelands_container{
+    width: 100%;
+    height: 500px;
+    background-color: #dedede;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+#irelands_map{
+   height: 500px;
+   align-content: initial;
+   float: right;
+}
+.irelands_container h1{
+    text-align: center;
+    font-family: Roboto;
+    position: relative;
+    padding-top: 190px;
+}
+.irelands_container p{
+    text-align: center;
 }
