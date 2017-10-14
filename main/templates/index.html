@@ -26,10 +26,10 @@
 
 <div id="{{ abou.id }}">
 <div class="container">
-<div class="sidebar">
+<div class="sidebar sidebar_frame">
       <!-- Three columns of text below the carousel -->
-      <h2>{{abou.title}}</h2>
-          <img src="{{MEDIA_URL}}{{ abou.thumbnail_image}}" alt="Generic placeholder image" width="300" height="200">
+          <img class="tail_image" src="{{MEDIA_URL}}{{ abou.thumbnail_image}}" alt="Generic placeholder image">
+          <h2 class="title_text">{{abou.title}}</h2>
           <p>{{ abou.content|truncatewords:10 }}</p>
               <!-- Swiper -->
     <div class="swiper-container">
