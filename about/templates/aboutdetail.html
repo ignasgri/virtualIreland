@@ -10,19 +10,35 @@
         height: 400px;
         width: 100%;
        }
+    a-scene {
+         display: block;
+         height: 600px;
+         width: 100%; 
+}
+    .a-scene-box{
+    height: 300px;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    }
     </style>
 </head>
-<p>weather</p>
+
+<div class="container">
+    <a-scene embedded>
+        <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>
+    </a-scene>
+
+
 
 
 <div class="weather-app">
-    <div class="left">
-<div class="temperature"><span id="temperature">0</span>&deg;</div>
-<div class="location"><span id="location">Unknown</span></div>
-    </div>
-    <div class="right">
-<div class="top">
+
+<div class="location">weather in <span id="location">Unknown</span></div>
+<div class="weather_icon">
     <img id="icon" width="20px" src="{% static "images/sunny.png" %}"/>
+    <div class="temperature"><span id="temperature">0</span>&deg;</div>
 </div>
 
 <div class="bottom">
@@ -40,39 +56,24 @@
 </div>
 
 
-
-
-
-
-
-
-
-        <button class="btn btn-success" onclick="location.href='/about'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button>
-<div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 ">
-                <h1 id="locName">{{ abou.title }}</h1>
-                
-                    
-                {% comment %}<a-scene>
-      <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>{% endcomment %}
-
-      {% comment %}<a-text font="kelsonsans" value="Guinness Lake" width="6" position="0 0.3 -2"
-              rotation="-3 -50 0"></a-text>
-    </a-scene>{% endcomment %}
-                <div class="t">
+    <div class="container">
+        <h1 id="locName">{{ abou.title }}</h1>            
+            <div class="t">
                 <p>{{ abou.content|linebreaks }}</p>
                 <p>{{ abou.published_date }} | <strong>Views</strong> {{ abou.views }} | <strong>Tag</strong> {{ abou.tag }}</p>
-                </div>
-                <button class="btn btn-success" onclick="location.href='/about'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button>
-                <button class="btn btn-danger" onclick="location.href='edit'">Edit</button>
-        
-                   
-            </div>
-        </div>
-</div>
+            </div>           
+    </div>
 
-    
+    <div class="container">
+        <h3>My Google Maps Demo</h3>
+        <div id="map"></div>
+    </div>
+
+    <div class="container">
+         <button class="btn btn-success" onclick="location.href='/about'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button> 
+    </div>
+
+ {% comment %}waether app script{% endcomment %}
 <script>
     var APPID = "f5069abcfd0981b52d3b633cb1033c5a";
     var temp;
@@ -133,16 +134,12 @@ window.onload = function(){
     direction = document.getElementById("direction");
     lat = ("{{ abou.latitude}}");
     lng = ("{{ abou.longitude }}");
-    
-
     updateByGeo(geo);
 }
 </script>
 
-
-    <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-
+    
+{% comment %}google maps script{% endcomment %}
     <script>
         var lat = JSON.parse("{{ abou.latitude|escapejs }}");
         var lng = JSON.parse("{{ abou.longitude|escapejs }}");
