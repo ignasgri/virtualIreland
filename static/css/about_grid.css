@@ -53,7 +53,27 @@
 .grid div:nth-child(odd){
     background-color: green;
 }
-
+#icon{
+    width: 200px;
+    margin: auto;
+    margin-right: 20px;
+}
+.temperature{
+    font-size: 32px;
+    margin: auto;
+    margin-left: 0px;
+}
+.icon_container{
+    width: 100%;
+    display: inline-flex;
+    margin-top: 40px;
+}
+.weeks_weather{
+    text-align: center;
+}
+#panel{
+    display: none;
+}
 @media screen and (min-width: 736px){
     .grid{
     display: grid;

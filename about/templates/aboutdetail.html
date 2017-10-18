@@ -4,6 +4,7 @@
 {% block content %}
 
 <head>
+    <link rel="stylesheet" href="{% static 'css/about_grid.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
         <style>
        #map {
@@ -29,16 +30,29 @@
     <a-scene embedded>
         <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>
     </a-scene>
+</div>
 
+<div class="container">
+        <h1 id="locName">{{ abou.title }}</h1>            
+            <div class="t">
+                <p>{{ abou.content|linebreaks }}</p>
+            </div>           
+    </div>
 
-
-
+<div class="container">
 <div class="weather-app">
 
 <div class="location">weather in <span id="location">Unknown</span></div>
 <div class="weather_icon">
-    <img id="icon" width="20px" src="{% static "images/sunny.png" %}"/>
+    <div class="icon_container">
+    <img id="icon" src="{% static "images/sunny.png" %}"/>
     <div class="temperature"><span id="temperature">0</span>&deg;</div>
+    </div>
+</div>
+
+<div class="weeks_weather">
+<div id="flip">Weather for all week</div>
+<div id="panel">Monday Tuesday Wednesday Thursday Friday Saturday Sunday</div>
 </div>
 
 <div class="bottom">
@@ -56,13 +70,7 @@
 </div>
 
 
-    <div class="container">
-        <h1 id="locName">{{ abou.title }}</h1>            
-            <div class="t">
-                <p>{{ abou.content|linebreaks }}</p>
-                <p>{{ abou.published_date }} | <strong>Views</strong> {{ abou.views }} | <strong>Tag</strong> {{ abou.tag }}</p>
-            </div>           
-    </div>
+    
 
     <div class="container">
         <h3>My Google Maps Demo</h3>
@@ -73,6 +81,9 @@
          <button class="btn btn-success" onclick="location.href='/about'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button> 
     </div>
 
+<div class="container">
+    <p>{{ abou.published_date }} | <strong>Views</strong> {{ abou.views }} | <strong>Tag</strong> {{ abou.tag }}</p>
+</div>
  {% comment %}waether app script{% endcomment %}
 <script>
     var APPID = "f5069abcfd0981b52d3b633cb1033c5a";

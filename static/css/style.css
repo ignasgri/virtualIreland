@@ -69,9 +69,6 @@ body{
     width: 80%;
     margin-left: 20px;
 }
-.weather_icon{
-    display: relative;
-}
 .swiper-pagination{
     padding-top: 10px;
 }
