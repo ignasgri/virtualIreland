@@ -4,7 +4,7 @@
 {% block content %}
 
 <head>
-    <link rel="stylesheet" href="{% static 'css/about_grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about_d_grid.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
         <style>
        #map {
@@ -27,32 +27,44 @@
 </head>
 
 <div class="container">
+    <div class="image">
     <a-scene embedded>
         <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>
     </a-scene>
+    </div>
 </div>
 
 <div class="container">
+    <div class="title">
         <h1 id="locName">{{ abou.title }}</h1>            
             <div class="t">
                 <p>{{ abou.content|linebreaks }}</p>
             </div>           
     </div>
+    </div>
 
 <div class="container">
+    <div class="weather">
 <div class="weather-app">
 
 <div class="location">weather in <span id="location">Unknown</span></div>
 <div class="weather_icon">
     <div class="icon_container">
-    <img id="icon" src="{% static "images/sunny.png" %}"/>
+    <img id="icon" src="{% static "images/loading1.gif" %}"/>
     <div class="temperature"><span id="temperature">0</span>&deg;</div>
     </div>
 </div>
 
 <div class="weeks_weather">
-<div id="flip">Weather for all week</div>
-<div id="panel">Monday Tuesday Wednesday Thursday Friday Saturday Sunday</div>
+<div id="flip">more <i class="fa fa-sort-desc" aria-hidden="true"></i></div>
+<div id="panel">
+    <TABLE class="weather_table_align">
+        <TR id="row1">
+            <TD>Monday  <TD>Tuesday  <TD>Wednesday <TD>Thursday  <TD>Friday  <TD>Saturday <TD>Sunday
+        <TR id="row2">
+            <TD><i class="fal fa-cloud" aria-hidden="true"></i>+19   <TD><i class="fal fa-sun" aria-hidden="true"></i>+18   <TD><i class="fal fa-tint" aria-hidden="true"></i>+13 
+    </TABLE>
+</div>
 </div>
 
 <div class="bottom">
@@ -67,14 +79,24 @@
 
 </div>
     </div>
+    </div>
 </div>
 
 
     
 
     <div class="container">
+        <div class="map">
         <h3>My Google Maps Demo</h3>
         <div id="map"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="directions">
+        <h3>My Google Maps Demo</h3>
+        <p>this is place for destination</p>
+        </div>
     </div>
 
     <div class="container">
