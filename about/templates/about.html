@@ -5,24 +5,25 @@
 <link rel="stylesheet" href="{% static 'css/swiper_mini.css' %}">
 {% block sidebar%}
 
-<div class="container">
-<div class="title">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem fugit, obcaecati odio asperiores iure officia illo! Consectetur dolorum aspernatur non reiciendis, ipsam quisquam, hic culpa dignissimos. Sunt, libero veniam voluptate. </p>
-</div>
-</div>
 
 <div class="container">
+  <div class="wrapper">
+<div class="title">
+  <p>title</p>
+</div>
+
+{% comment %}<div class="container">{% endcomment %}
 <div class="header">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem fugit, obcaecati odio asperiores iure officia illo! Consectetur dolorum aspernatur non reiciendis, ipsam quisquam, hic culpa dignissimos. Sunt, libero veniam voluptate. </p>
+  <p>header</p>
 </div>
-</div>
+{% comment %}</div>{% endcomment %}
 
 {% for abou in about %}
 
-
+<div class="sidebar">
 <div id="{{ abou.id }}">
 <div class="container">
-<div class="sidebar">
+
   <div class="a">
       <!-- Three columns of text below the carousel -->
       <h2>{{abou.title}}</h2>
@@ -60,6 +61,8 @@
         </div>
       </div>
     </div>
+</div>
+</div>
 </div>
         
 

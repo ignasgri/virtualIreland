@@ -1,29 +1,40 @@
-.grid{
+.wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr;*/
     grid-template-areas: 
     "image image image"
-    "header header header"
+    "title title title"
     "weather weather weather"
     "map map directions"
     "eat sleap do";
     grid-gap: 10px;
 }
+.image{
+    grid-area: image;
+    /*background-color: red;*/
+}
 .title{
     grid-area: title;
-}
-.header{
-    grid-area: header;
+        /*background-color: blue;*/
+
 }
 .weather{
     grid-area: weather;
+        /*background-color: yellow;*/
+       
+
 }
 .map{
     grid-area: map;
+        /*background-color: orange;*/
+
+    /*width: 70%;*/
 }
 .directions{
     grid-area: directions;
+    /*width: 30%;*/
+    /*background-color: pink;*/
 }
 #icon{
     width: 200px;

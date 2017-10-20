@@ -27,24 +27,24 @@
 </head>
 
 <div class="container">
+    <div class="wrapper">
     <div class="image">
     <a-scene embedded>
         <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>
     </a-scene>
     </div>
-</div>
 
+<div class="title">
 <div class="container">
-    <div class="title">
         <h1 id="locName">{{ abou.title }}</h1>            
             <div class="t">
                 <p>{{ abou.content|linebreaks }}</p>
             </div>           
     </div>
     </div>
-
+    
+<div class="weather">
 <div class="container">
-    <div class="weather">
 <div class="weather-app">
 
 <div class="location">weather in <span id="location">Unknown</span></div>
@@ -84,17 +84,15 @@
 
 
     
-
+<div class="map">
     <div class="container">
-        <div class="map">
         <h3>My Google Maps Demo</h3>
         <div id="map"></div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="directions">
-        <h3>My Google Maps Demo</h3>
+<div class="directions">
+    <div class="container">    
         <p>this is place for destination</p>
         </div>
     </div>
@@ -105,6 +103,9 @@
 
 <div class="container">
     <p>{{ abou.published_date }} | <strong>Views</strong> {{ abou.views }} | <strong>Tag</strong> {{ abou.tag }}</p>
+</div>
+
+    </div>
 </div>
  {% comment %}waether app script{% endcomment %}
 <script>
