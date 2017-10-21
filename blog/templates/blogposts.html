@@ -1,13 +1,16 @@
 {% extends "base.html" %}
- 
+
 {% block content %}
+ <div class="container">
     <div id="newpostbutton">
 
     <button class="btn btn-success" onclick="location.href='{% url 'new_post' %}'">New Post</button>
     </div>
+ </div>
+    
     
     {% for post in posts %}
-        
+        <div class="container">
         <div class="row" id="blogpostsmain">
 
             <div class="col-sm-4" id="blogpostimagediv">
@@ -25,5 +28,7 @@
                 <p>{{ post.published_date }} | <strong>Views</strong> {{ post.views}} | <strong>Tag</strong> {{ post.tag }}</p>
             </div>
         </div>
+        </div>
     {% endfor %}
 {% endblock %}
+ 
