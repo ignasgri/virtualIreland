@@ -72,3 +72,24 @@ body{
 .swiper-pagination{
     padding-top: 10px;
 }
+.write{
+        width: 100%;
+    height: 300px;
+    /* display: table-row-group; */
+    /* position: relative; */
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    opacity: 0.5;
+    /* margin: auto;
+/*}*/
+}
+#write_post_image{
+    height: 300px;
+    position: absolute
+}
+.blogposts_container{
+        border: 1px solid #f0f0f0;
+}
+.block{
+    width: 100%;
+}
