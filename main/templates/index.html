@@ -5,13 +5,20 @@
 <link rel="stylesheet" href="{% static 'css/index_grid.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+<script src="{% static 'js/geoloc.js' %}"></script>
 {%block content%}
+
 
 <div class="container">
 <div class="title irelands_container">
   <img id="irelands_map" src="{% static 'images/ireland.png'%}" alt="irelands map">
   <h1>Find you destination</h1>
   <p>Click on map to discover new experience in 360 </p>
+  <a href="#" id="get_location">Get my geolocation</a>
+  <div id="map">
+    <iframe id="google_map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9521.012513439806!2d-6.259908!3d53.349012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sie!4v1508788125467" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    {% comment %}<iframe id="google_map" width="425px" height="350px" src="https://maps.google.ie" frameborder="0"></iframe>{% endcomment %}
+  </div>
 </div>
 </div>
   
