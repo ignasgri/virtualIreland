@@ -19,6 +19,7 @@ mock==2.0.0
 olefile==0.44
 pbr==3.1.1
 Pillow==4.2.1
+psycopg2==2.7.4
 pylint==1.7.2
 pylint-django==0.7.2
 pylint-plugin-utils==0.2.6
