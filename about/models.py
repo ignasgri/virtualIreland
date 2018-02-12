@@ -5,7 +5,7 @@ from django.db import models
 
 class Abou(models.Model):
     author = models.ForeignKey('auth.User')
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=210)
     content = models.TextField()
     create_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(blank=True, null=True)
