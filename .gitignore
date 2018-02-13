@@ -4,3 +4,5 @@ __pycache__
 media
 rest_framework
 admin
+.idea
+node_modules
