@@ -6,6 +6,8 @@
 <head>
     <link rel="stylesheet" href="{% static 'css/about_d_grid.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
+    <script src="https://rawgithub.com/ngokevin/kframe/master/components/reverse-look-controls/dist/aframe-reverse-look-controls-component.min.js"></script>
+    
         <style>
        #map {
         height: 400px;
@@ -29,7 +31,8 @@
 <div class="container">
     <div class="wrapper">
     <div class="image">
-    <a-scene embedded>
+    <a-scene embedded >
+        <a-entity camera reverse-look-controls></a-entity>
         <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>
     </a-scene>
     </div>
