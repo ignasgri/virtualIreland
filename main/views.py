@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from about.models import Abou
+from location.models import Set_Location
 
 # def get_index(request):
 #     return render(request, "index.html")
 
 def get_index(request):
-    about = Abou.objects.all()
-    return render(request, "index.html", {"about": about})
+    location = Set_Location.objects.all()
+    return render(request, "index.html", {"location": location})

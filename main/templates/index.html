@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static from staticfiles%}
 {% load bootstrap_tags %}
-
 <link rel="stylesheet" href="{% static 'css/index_grid.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
@@ -9,7 +8,7 @@
 {%block content%}
 
 
-<div class="container">
+{% comment %} <div class="container">
 <div class="title irelands_container">
   <img id="irelands_map" src="{% static 'images/ireland.png'%}" alt="irelands map">
   <h1>Find you destination</h1>
@@ -17,29 +16,29 @@
   <a href="#" id="get_location">Get my geolocation</a>
   <div id="map">
     <iframe id="google_map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9521.012513439806!2d-6.259908!3d53.349012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sie!4v1508788125467" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-    {% comment %}<iframe id="google_map" width="425px" height="350px" src="https://maps.google.ie" frameborder="0"></iframe>{% endcomment %}
+    <iframe id="google_map" width="425px" height="350px" src="https://maps.google.ie" frameborder="0"></iframe>
   </div>
 </div>
-</div>
+</div> {% endcomment %}
   
 <div class="container">
 <div class="header">
-<div class="swiper-container">
+<div class="swiper-container s1">
 <div class="swiper-wrapper">
-  {% for abou in about %}
+  {% for Set_Location in location %}
 <div class="swiper-slide">
 
 
 
-<div id="{{ abou.id }}">
+<div id="{{ location.id }}">
 <div class="container">
 <div class="sidebar sidebar_frame">
       <!-- Three columns of text below the carousel -->
-          <img class="tail_image" src="{{MEDIA_URL}}{{ abou.thumbnail_image}}" alt="Generic placeholder image">
-          <h2 class="title_text">{{abou.title}}</h2>
-          <p>{{ abou.content|truncatewords:10 }}</p>
+          <img class="tail_image" src="{{MEDIA_URL}}{{ Set_Location.thumbnail_image}}" alt="Generic placeholder image">
+          <h2 class="title_text">{{Set_Location.title}}</h2>
+          <p>{{ Set_Location.content|truncatewords:10 }}</p>
               <!-- Swiper -->
-    <div class="swiper-container">
+    <div class="swiper-container s2">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><TABLE>
                                       <TR id="row1">
@@ -66,7 +65,7 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
     </div>
-          <p><a class="btn btn-secondary" onclick="location.href='{% url 'abou' abou.id %}'" role="button">View details &raquo;</a></p>
+          {% comment %} <p><a class="btn btn-secondary" onclick="location.href='{% url 'loc_det' Set_Location.id %}'" role="button">View details &raquo;</a></p> {% endcomment %}
         </div>
       </div>
     </div>

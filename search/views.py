@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from about.models import Abou
+from location.models import Set_Location
 
 
 # Create your views here.
 def do_search(request):
-    about = Abou.objects.filter(content__contains=request.GET['search'])
-    return render(request, 'results.html', {'about':about})
+    location = Set_Location.objects.filter(content__contains=request.GET['search'])
+    return render(request, 'results.html', {'location':location})
 
 

@@ -20,16 +20,16 @@
 </div>
 {% comment %}</div>{% endcomment %}
 
-{% for abou in about %}
+{% for Set_Location in location %}
 <div class="container">
 <div class="sidebar">
-<div id="{{ abou.id }}">
+<div id="{{ Set_Location.id }}">
 <div class="container">
 
       <!-- Three columns of text below the carousel -->
-      <h2>{{abou.title}}</h2>
-          <img src="{{MEDIA_URL}}{{ abou.thumbnail_image}}" alt="Generic placeholder image" width="300" height="200">
-          <p>{{ abou.content|truncatewords:10 }}</p>
+      <h2>{{Set_Location.title}}</h2>
+          <img src="{{MEDIA_URL}}{{ Set_Location.thumbnail_image}}" alt="Generic placeholder image" width="300" height="200">
+          <p>{{ Set_Location.content|truncatewords:10 }}</p>
               <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -58,7 +58,7 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
     </div>
-          <p><a class="btn btn-secondary" onclick="location.href={{ abou.id }}" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-secondary" onclick="location.href={{ Set_ocation.id }}" role="button">View details &raquo;</a></p>
       </div>
     </div>
 </div>
@@ -80,7 +80,7 @@
 {% comment %}<div id="{{ abou.id }}">
   <div class="dialog">
 <div class="col-sm-6 col-md-6 col-lg-6">
-        <h1 class="-t">{{ abou.title }}</h1>
+        <h1 class="-t">{{ Set_Location.title }}</h1>
       </div>
       <div class="-b">
 <div class="row">

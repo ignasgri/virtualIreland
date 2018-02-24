@@ -1,13 +1,13 @@
 from django.conf.urls import url
-from .views import all_about
+from .views import location
 
 from .views import *
 
 from . import views
 
 urlpatterns = [
-    url(r'^$', all_about, name='about'),
-    url(r'^(?P<id>\d+)/$', abou_detail, name='abou'),
+    url(r'^$', location, name='location'),
+    url(r'^(?P<id>\d+)/$', location_details, name='location_details'),
     # url(r'^(?P<id>\d+)/$', abou_detail),
     
 ]

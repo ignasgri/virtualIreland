@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.db import models
 
 
-class Abou(models.Model):
+class Set_Location(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=210)
     content = models.TextField()

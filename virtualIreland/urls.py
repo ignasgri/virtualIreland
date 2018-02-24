@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from main.views import get_index
-from about import urls as about_urls
+from location import urls as location_urls
 from accounts import urls as accounts_urls
 from blog import urls as blog_urls
 from accounts import reset_urls as reset_urls
@@ -24,18 +24,18 @@ from .settings import MEDIA_ROOT
 from django.views import static
 
 from rest_framework import routers
-from about import views as abou_views
+from location import views as loc_det_views
 from search import urls as search_urls
 # from search.views import do_search
 
 router = routers.DefaultRouter()
-router.register(r'about', abou_views.AbouViewSet)
+router.register(r'location', loc_det_views.Set_LocationViewSet)
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
     url(r'accounts/', include(accounts_urls)),
-    url(r'^about/', include(about_urls)),
+    url(r'^location/', include(location_urls)),
     url(r'user/', include(reset_urls)),
     url(r'^blog/', include(blog_urls)),
     url(r'^$', get_index, name='index'),

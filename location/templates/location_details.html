@@ -6,7 +6,6 @@
 <head>
     <link rel="stylesheet" href="{% static 'css/about_d_grid.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
-    <script src="https://rawgithub.com/ngokevin/kframe/master/components/reverse-look-controls/dist/aframe-reverse-look-controls-component.min.js"></script>
     
         <style>
        #map {
@@ -32,16 +31,17 @@
     <div class="wrapper">
     <div class="image">
     <a-scene embedded >
-        <a-entity camera reverse-look-controls></a-entity>
-        <a-sky src="{{MEDIA_URL}}{{ abou.vr_image}}" rotation="0 275 0"></a-sky>
+        <a-entity camera look-controls="reverseMouseDrag: true"></a-entity>
+        
+        <a-sky src="{{MEDIA_URL}}{{ Set_Location.vr_image}}" rotation="0 275 0"></a-sky>
     </a-scene>
     </div>
 
 <div class="title">
 <div class="container">
-        <h1 id="locName">{{ abou.title }}</h1>            
+        <h1 id="locName">{{Set_locations.title }}</h1>            
             <div class="t">
-                <p>{{ abou.content|linebreaks }}</p>
+                <p>{{ Set_Location.content|linebreaks }}</p>
             </div>           
     </div>
     </div>
@@ -101,11 +101,11 @@
     </div>
 
     <div class="container">
-         <button class="btn btn-success" onclick="location.href='/about'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button> 
+         <button class="btn btn-success" onclick="location.href='/location'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button> 
     </div>
 
 <div class="container">
-    <p>{{ abou.published_date }} | <strong>Views</strong> {{ abou.views }} | <strong>Tag</strong> {{ abou.tag }}</p>
+    <p>{{ set_loc.published_date }} | <strong>Views</strong> {{ set_loc.views }} | <strong>Tag</strong> {{ set_loc.tag }}</p>
 </div>
 
     </div>
