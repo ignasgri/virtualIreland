@@ -24,12 +24,12 @@ from .settings import MEDIA_ROOT
 from django.views import static
 
 from rest_framework import routers
-from location import views as loc_det_views
+from location import views as set_loc_views
 from search import urls as search_urls
 # from search.views import do_search
 
 router = routers.DefaultRouter()
-router.register(r'location', loc_det_views.Set_LocationViewSet)
+router.register(r'location', set_loc_views.Set_LocationViewSet)
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),

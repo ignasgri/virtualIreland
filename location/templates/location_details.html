@@ -33,15 +33,15 @@
     <a-scene embedded >
         <a-entity camera look-controls="reverseMouseDrag: true"></a-entity>
         
-        <a-sky src="{{MEDIA_URL}}{{ Set_Location.vr_image}}" rotation="0 275 0"></a-sky>
+        <a-sky src="{{MEDIA_URL}}{{ set_loc.vr_image}}" rotation="0 275 0"></a-sky>
     </a-scene>
     </div>
-
+    
 <div class="title">
 <div class="container">
-        <h1 id="locName">{{Set_locations.title }}</h1>            
+        <h1 id="locName">{{set_loc.title }}</h1>            
             <div class="t">
-                <p>{{ Set_Location.content|linebreaks }}</p>
+                <p>{{ set_loc.content|linebreaks }}</p>
             </div>           
     </div>
     </div>
@@ -101,7 +101,7 @@
     </div>
 
     <div class="container">
-         <button class="btn btn-success" onclick="location.href='/location'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button> 
+         <!-- <button class="btn btn-success" onclick="location.href='/location'"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back To About</button>  -->
     </div>
 
 <div class="container">
