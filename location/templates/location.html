@@ -77,32 +77,7 @@
 
 
 
-{% comment %}<div id="{{ abou.id }}">
-  <div class="dialog">
-<div class="col-sm-6 col-md-6 col-lg-6">
-        <h1 class="-t">{{ Set_Location.title }}</h1>
-      </div>
-      <div class="-b">
-<div class="row">
-  <div class="col-sm-6 col-md-6 col-lg-6">
-    
-                           
-                            <img src="{{ MEDIA_URL }}{{ abou.vr_image }}">
-    
-  </div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <h6>{{ abou.content|truncatewords:10 }}</h6>
-      <h2>{{ abou.tag }}</h2>
-      <img height="100" width="100" src="{{ MEDIA_URL }}{{ abou.thumbnail_image }}">
 
-    </div>
-</div>
-<p><button class="btn btn-success hvr-grow" onclick="location.href={{ abou.id }}">Read More</button></p>
-      </div>
-    </div>
-
-  </div>
-</div>{% endcomment %}
 {% endfor %}
 {% endblock sidebar%}
 

@@ -169,8 +169,8 @@ window.onload = function(){
     humidity = document.getElementById("humidity");
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
-    lat = ("{{ abou.latitude}}");
-    lng = ("{{ abou.longitude }}");
+    lat = ("{{ set_loc.latitude}}");
+    lng = ("{{ set_loc.longitude }}");
     updateByGeo(geo);
 }
 </script>
@@ -178,8 +178,8 @@ window.onload = function(){
     
 {% comment %}google maps script{% endcomment %}
     <script>
-        var lat = JSON.parse("{{ abou.latitude|escapejs }}");
-        var lng = JSON.parse("{{ abou.longitude|escapejs }}");
+        var lat = JSON.parse("{{ set_loc.latitude|escapejs }}");
+        var lng = JSON.parse("{{ set_loc.longitude|escapejs }}");
       function initMap() {
         var uluru = {lat: lat, lng: lng };
         var map = new google.maps.Map(document.getElementById('map'), {
